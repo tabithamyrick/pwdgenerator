@@ -1,0 +1,261 @@
+/* lets keep the styling simple with light and dark mode support and responsive design */
+:root {
+    --bg-color-light: #ffffff;
+    --text-color-light: #000000;
+    --bg-color-dark: #121212;
+    --text-color-dark: #ffffff;
+    --font-family: 'Arial, sans-serif';
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+    margin: 0;
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 500px;
+    width: 100%;
+    background: var(--bg-color-light);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input[type="number"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input[type="number"]:focus {
+    outline: none;
+    border-color: #007BFF;
+}
+
+.toggle-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+}
+
+.toggle-btn {
+    padding: 0.75rem 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.toggle-btn:hover {
+    border-color: #007BFF;
+    transform: translateY(-1px);
+}
+
+.toggle-btn.active {
+    background: #007BFF;
+    border-color: #007BFF;
+    color: #ffffff;
+}
+
+@media (max-width: 600px) {
+    .toggle-options {
+        grid-template-columns: 1fr;
+    }
+}
+
+.password-output {
+    background: #f8f9fa;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.password-text {
+    flex: 1;
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    word-break: break-all;
+    color: #2c3e50;
+}
+
+#copy-btn {
+    min-width: 80px;
+    padding: 0.5rem 1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: var(--bg-color-dark);
+        color: var(--text-color-dark);
+    }
+    
+    .container {
+        background: var(--bg-color-dark);
+        box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+    }
+    
+    .form-group input[type="number"] {
+        background: #2a2a2a;
+        border-color: #555;
+        color: var(--text-color-dark);
+    }
+    
+    .password-output {
+        background: #2a2a2a;
+        border-color: #555;
+    }
+    
+    .password-text {
+        color: #e0e0e0;
+    }
+    
+    .toggle-btn {
+        background: #2a2a2a;
+        border-color: #555;
+        color: #e0e0e0;
+    }
+    
+    .toggle-btn:hover {
+        border-color: #007BFF;
+        background-color: #333;
+    }
+    
+    .toggle-btn.active {
+        background-color: #1a73e8;
+        border-color: #1a73e8;
+        color: #ffffff;
+    }
+}
+h1, h2, h3 {
+    margin-top: 0;
+}
+p {
+    line-height: 1.6;
+}
+a {
+    color: inherit;
+    text-decoration: underline;
+}
+a:hover {
+    text-decoration: none;
+}
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        padding: 1.5rem;
+    }
+    
+    h1 {
+        font-size: 1.5em;
+    }
+    h2 {
+        font-size: 1.2em;
+    }
+    h3 {
+        font-size: 1em;
+    }
+    p {
+        font-size: 0.9em;
+    }
+}
+
+/* Additional styling for better readability */
+blockquote {
+    border-left: 4px solid #ccc;
+    margin: 1em 0;
+    padding-left: 1em;
+    color: #666;
+}
+code {
+    background-color: #f4f4f4;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+}
+@media (prefers-color-scheme: dark) {
+    code {
+        background-color: #333;
+    }
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+button:hover {
+    background-color: #0056b3;
+}
+button:active {
+    background-color: #004085;
+}
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0,123,255,0.5);
+}
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+button:disabled:hover {
+    background-color: #cccccc;
+}
+button:disabled:active {
+    background-color: #cccccc;
+}
+@media (prefers-color-scheme: dark) {
+    button {
+        background-color: #1a73e8;
+        color: #ffffff;
+    }
+    button:hover {
+        background-color: #135ab6;
+    }
+    button:active {
+        background-color: #0d3d7a;
+    }
+    button:disabled {
+        background-color: #555555;
+        color: #aaaaaa;
+    }
+}
+/* Button styles with hover, active, focus, and disabled states */
