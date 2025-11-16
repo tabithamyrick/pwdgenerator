@@ -14,7 +14,7 @@ A simple, lightweight, and secure password generator web app built with vanilla 
 
 ## Demo
 
-[Live Demo](https://your-username.github.io/password-generator) *(update with your actual URL)*
+[Live Demo](https://tabithamyrick.github.io/password-generator)
 
 ## Quick Start
 
